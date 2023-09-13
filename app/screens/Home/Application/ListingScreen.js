@@ -13,7 +13,7 @@ const wait = (timeout) => {
 
 const ListingScreen = () => {
 
-  //refreshing and onrefresh is to refresh the flatlist
+  //refreshing and onrefresh is to refresh the flatlist (the listings)
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -30,9 +30,11 @@ const ListingScreen = () => {
   const [listingarray, setListingarray] = useState([]); // Initial empty array of users
 
   useEffect(() => {
+    // connect to firebase, db is the database
     const subscriber = getDocs(collection(db, 'Listings')).then(querySnapshot => {
         const listingarray = [];
-  
+
+        //listing array is the array of listings in object form
         querySnapshot.forEach(documentSnapshot => {
           listingarray.push({
             ...documentSnapshot.data(),
@@ -41,7 +43,7 @@ const ListingScreen = () => {
         });
   
         //why is listingarray still empty here?
-        console.log('arrayupdated')
+        // console.log('arrayupdated')
         setListingarray(listingarray);
         setLoading(false);
       });
@@ -73,11 +75,13 @@ const ListingScreen = () => {
 
 
 
-
+      //flatlist is the element that displays all the listings in the vertical scroll (like instagram)
       <FlatList style = {{height: '90%',}}
+      //feed it an array and it will automatically show each object one above another
       data={listingarray}
       renderItem={({ item }) => (
 
+        //style each element in the array (flatlist calls them views)
         <View style={styles.listingitem}>
 
           <View style = {styles.listingtextcontainer}> 
@@ -89,6 +93,7 @@ const ListingScreen = () => {
         </View>
 
       )}
+      //adding scroll down to refresh
       refreshControl={
         <RefreshControl
           refreshing={refreshing}
