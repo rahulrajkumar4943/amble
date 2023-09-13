@@ -21,11 +21,13 @@ function ProfileScreen(props) {
 
     return (
       <SafeAreaView style = {{flex: 1}}>
+           //style the data from googles oauth login session nicely
+            //auth has all the data about the currently logged in user (stored in firebase)
 
           {/* Profile pic and username top 20 percent */}
           <View style = {styles.header}>
             <Image 
-            source = {{uri: 'https://icon-library.com/images/default-profile-icon/default-profile-icon-6.jpg'}}
+            source = {{uri: 'https://icon-library.com/images/default-profile-icon/default-profile-icon-6.jpg'}} //default profile pic icon. update to use google pfp
             style = {styles.profilepic} 
             />
             <View style = {styles.usernamebox}>
@@ -35,7 +37,7 @@ function ProfileScreen(props) {
 
           </View>
 
-
+        //logout button
         <View style = {styles.buttonContainer}>
 
         <TouchableOpacity onPress = {handleSignout}
@@ -45,10 +47,11 @@ function ProfileScreen(props) {
           </Text>
         </TouchableOpacity>
 
-        <Text>
-          <Button title = "checkname" onPress={console.log('name: ', auth.currentUser?.displayName)}/>
-        </Text>
-        </View>
+        // for testing purposes. logs name when the name is clicked. used jic the app is being goofy and doesnt update the profile page after logging into a new acc
+        // <Text>
+        //   <Button title = "checkname" onPress={console.log('name: ', auth.currentUser?.displayName)}/>
+        // </Text>
+        // </View>
         
         </SafeAreaView>
 
