@@ -21,7 +21,8 @@ const MakeListingScreen = () => {
   const navigation = useNavigation()
 
   //sets image url to no image initially
-  const [imageurl, setImageurl] = useState('https://firebasestorage.googleapis.com/v0/b/amble-ec1e2.appspot.com/o/noimage.jpg?alt=media&token=84f24d18-048e-4ef6-99f3-c0145c941d39')
+  const [imageurl, setImageurl] = useState('https://firebasestorage.googleapis.com/v0/b/amble-ec1e2.appspot.com/o/noimage.jpg?alt=media&token=84f24d18-048e-4ef6-99f3-c0145c941d39') //no profile pic image link
+  //set all these states as empty. they will be updated when the user submits the form
   const [dogName, setDogName] = useState('')
   const [breed, setBreed] = useState('')
   const [ownerName, setOwnerName] = useState('')
@@ -33,6 +34,7 @@ const MakeListingScreen = () => {
   const [isForWalk, setIsForWalk] = useState('first');
   const [imageuri, setImageuri] = useState('')
 
+  //do not remove
   useEffect(() => {
       if (Platform.OS === 'ios') {
         setShow(true)
@@ -43,7 +45,7 @@ const MakeListingScreen = () => {
   })
 
 
-
+  //use ios specific datepicker for ios devices because it includes both the date and time
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
@@ -55,6 +57,7 @@ const MakeListingScreen = () => {
     setMode(currentMode);
   };
 
+  //
   const showDatepicker = () => {
     //console.log('datepicker shown')
     showMode('date');
