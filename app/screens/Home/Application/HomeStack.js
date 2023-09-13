@@ -30,7 +30,7 @@ export default function Connector(navigation) {
   return (
     <NavigationContainer independent={true}>
 
-
+      //stack navigator is to show the screens to the navbar
       <Stack.Navigator>
 
         <Stack.Screen name = "ListingScreen" component = {ListingScreen}/>
