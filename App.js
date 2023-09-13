@@ -95,15 +95,17 @@ export default function Connector(navigation) {
 
         }} />
 
-      
-        <Tab.Screen 
-        name = "MessageScreen" 
-        component = {MessageScreen}
-        options={{ title: "Messages", 
-        tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="message" color={color} size={size}/>),
-        headerShown: false
 
-        }} />
+        // commented out following tab because the page doesnt exist yet
+        // add a screen for messages
+        // <Tab.Screen 
+        // name = "MessageScreen" 
+        // component = {MessageScreen}
+        // options={{ title: "Messages", 
+        // tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="message" color={color} size={size}/>),
+        // headerShown: false
+
+        // }} />
 
         <Tab.Screen 
         name = "ProfileStack" 
