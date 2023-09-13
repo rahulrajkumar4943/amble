@@ -27,12 +27,15 @@ export default function Connector(navigation) {
 
   return (
     <NavigationContainer independent={true}>
+
+      //add a navbar
       <Tab.Navigator  
       tabBarOptions={{
         activeTintColor: 'orange',
       }} 
             screenOptions={
               ({ route }) => ({
+               //navbar buttons
                 tabBarButton: [
                   "LoginScreen",
                   "RegisterScreen",
@@ -54,10 +57,12 @@ export default function Connector(navigation) {
 
 
 
-
+      //initialize each screen under a seperate Tab.Screen tag
       <Tab.Screen 
         name = "LoginScreen" 
         component = {LoginScreen}
+        //no navbar icon because the log in and register screen isnt shown on the nav bar
+        //they shouldnt be accessible while using the app
         options={{ title: 'Login' ,
         tabBarStyle: { display: 'none'},
         tabBarIconStyle: {display: 'none'},
@@ -80,9 +85,11 @@ export default function Connector(navigation) {
 
 
         <Tab.Screen 
+        //named homestack because there are pages under the home page (like a tree system)
         name = "HomeStack" 
         component = {HomeStack}
         options={{ title: "Home", 
+        //state the icon and properties of the icon that leads to the home page from the navbar
         tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="home" color={color} size={size}/>),
         headerShown: false
 
