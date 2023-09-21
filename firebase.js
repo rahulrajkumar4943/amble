@@ -9,12 +9,12 @@ import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDLAlhJa7UVQV0YE8ri6TWJ6qIEcBBYP28",
-  authDomain: "amble-ec1e2.firebaseapp.com",
-  projectId: "amble-ec1e2",
-  storageBucket: "amble-ec1e2.appspot.com",
-  messagingSenderId: "736553810667",
-  appId: "1:736553810667:web:354a5b0ec7e144a049dcae"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase
